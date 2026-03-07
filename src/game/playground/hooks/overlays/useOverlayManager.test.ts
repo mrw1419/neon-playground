@@ -1,0 +1,3 @@
+// Test for useOverlayManager hook
+import { useOverlayManager } from './useOverlayManager';
+// ...existing test code...

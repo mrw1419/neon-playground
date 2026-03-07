@@ -1,0 +1,3 @@
+// Test for useToolSelection hook
+import { useToolSelection } from './useToolSelection';
+// ...existing test code...

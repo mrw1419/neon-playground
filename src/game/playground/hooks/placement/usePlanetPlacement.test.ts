@@ -1,0 +1,3 @@
+// Test for usePlanetPlacement hook
+import { usePlanetPlacement } from './usePlanetPlacement';
+// ...existing test code...

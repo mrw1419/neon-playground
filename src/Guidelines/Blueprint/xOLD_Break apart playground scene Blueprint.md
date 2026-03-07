@@ -1,0 +1,111 @@
+## PlaygroundScene Decomposition Game Plan
+
+- [ ] Extract custom hooks for state, effects, and handlers
+    - [ ] usePlanetPlacement: Handles planet placement logic and preview overlays
+        - [ ] Identify all planet placement logic in PlaygroundScene.tsx
+        - [ ] Move preview overlay logic to the hook
+        - [ ] Move mouse event handlers for planet placement to the hook
+        - [ ] Expose API for placement, preview, and state
+        - [ ] Write tests for hook behavior
+    - [ ] useColin: Handles Colin entity placement and logic
+        - [ ] Identify Colin placement logic in PlaygroundScene.tsx
+        - [ ] Move Colin-specific event handlers to the hook
+        - [ ] Expose API for Colin placement and state
+        - [ ] Write tests for hook behavior
+    - [ ] useOverlayManager: Centralizes overlay logic for all tools and effects
+        - [ ] Identify all overlay rendering logic in PlaygroundScene.tsx
+        - [ ] Move overlay state and rendering to the hook
+        - [ ] Expose API for overlay updates and visibility
+        - [ ] Write tests for overlay manager
+    - [ ] useToolSelection: Manages tool selection and state
+        - [ ] Identify tool selection logic in PlaygroundScene.tsx and ControlPanel
+        - [ ] Move selection state and handlers to the hook
+        - [ ] Expose API for selecting, deselecting, and querying tools
+        - [ ] Write tests for tool selection
+    - [ ] useEntityDeletion: Handles entity deletion and undo
+        - [ ] Identify entity deletion logic in PlaygroundScene.tsx
+        - [ ] Move deletion and undo logic to the hook
+        - [ ] Expose API for deleting, undoing, and tracking deleted entities
+        - [ ] Write tests for entity deletion/undo
+
+- [ ] Decompose UI into smaller components
+    - [ ] ControlPanel: Tabbed UI for tool/object/effect selection
+        - [ ] Identify all control panel logic and UI in PlaygroundScene.tsx
+        - [ ] Move tab selection and card rendering to ControlPanel component
+        - [ ] Pass tool/object/effect selection state via props or context
+        - [ ] Ensure accessibility and keyboard navigation
+        - [ ] Write tests for ControlPanel
+    - [ ] OverlayLayer: Renders all overlays (preview, effect, diagnostics)
+        - [ ] Identify overlay rendering logic in PlaygroundScene.tsx
+        - [ ] Move overlay rendering to OverlayLayer component
+        - [ ] Pass overlay state and update handlers via props or context
+        - [ ] Support multiple overlay types (preview, effect, diagnostics)
+        - [ ] Write tests for OverlayLayer
+    - [ ] EntityLayer: Renders all entities on canvas
+        - [ ] Identify entity rendering logic in PlaygroundScene.tsx
+        - [ ] Move entity rendering to EntityLayer component
+        - [ ] Pass entity list and update handlers via props or context
+        - [ ] Support entity overlays and diagnostics
+        - [ ] Write tests for EntityLayer
+    - [ ] EffectLayer: Renders effect visuals (burst, ripple, etc.)
+        - [ ] Identify effect rendering logic in PlaygroundScene.tsx
+        - [ ] Move effect rendering to EffectLayer component
+        - [ ] Pass effect state and update handlers via props or context
+        - [ ] Support multiple effect types and visuals
+        - [ ] Write tests for EffectLayer
+    - [ ] DebugPanel: Diagnostics and debug overlays
+        - [ ] Identify debug overlay and diagnostics logic in PlaygroundScene.tsx
+        - [ ] Move debug rendering to DebugPanel component
+        - [ ] Pass debug state and update handlers via props or context
+        - [ ] Support toggling diagnostics and overlays
+        - [ ] Write tests for DebugPanel
+
+- [ ] Move utility functions to a utils file
+    - [ ] Identify all utility functions in PlaygroundScene.tsx and related files
+    - [ ] Categorize utilities: hit detection, random planet, color themes, math helpers, etc.
+    - [ ] Create a dedicated utils directory (e.g., src/game/utils/)
+    - [ ] Move each utility function to an appropriate file in the utils directory
+    - [ ] Refactor imports in PlaygroundScene and other files to use new utils
+    - [ ] Write tests for each utility function
+    - [ ] Document utility functions for future maintainability
+
+- [ ] Implement registry/data-driven patterns
+    - [ ] Research registry/factory patterns for entities, effectors, and tools
+    - [ ] Design registry interfaces and data structures
+    - [ ] Refactor entity/effect/tool creation to use registry/factory
+    - [ ] Move hardcoded lists to registry-driven data
+    - [ ] Update UI logic to pull from registries (e.g., TabCards, overlays)
+    - [ ] Implement self-registration for new entities/effectors/tools
+    - [ ] Test registry-driven orchestration and UI
+    - [ ] Document registry/factory pattern for future maintainability
+
+- [ ] Isolate context providers
+    - [ ] Identify all context provider logic in PlaygroundScene.tsx and related files
+    - [ ] Move EngineContext and EffectContext definitions to separate files (e.g., src/game/context/EngineContext.tsx, src/game/context/EffectContext.tsx)
+    - [ ] Refactor context initialization and provider wrapping in main entry points
+    - [ ] Update all components to use hooks (useEngineContext, useEffectContext) for context access
+    - [ ] Ensure context values are properly typed and documented
+    - [ ] Write tests for context providers and hooks
+    - [ ] Document context usage patterns for maintainability
+
+- [ ] Refactor event handlers
+    - [ ] Identify all mouse/keyboard event logic in PlaygroundScene.tsx and related files
+    - [ ] Move event handler logic to custom hooks or handler files (e.g., usePlanetPlacement, useOverlayManager)
+    - [ ] Standardize handler signatures and patterns across tools and entities
+    - [ ] Remove patched-in and duplicate event code from PlaygroundScene.tsx
+    - [ ] Ensure all event handlers are properly typed and documented
+    - [ ] Write tests for event handler hooks and files
+    - [ ] Document event handler patterns for maintainability
+
+- [ ] Clean up and document
+    - [ ] Identify and remove all legacy code and comments from PlaygroundScene.tsx and related files
+    - [ ] Refactor code to match new architecture and patterns
+    - [ ] Write clear documentation for new architecture, hooks, components, and patterns
+    - [ ] Add or update README files for playground game and major modules
+    - [ ] Create blueprint documentation for maintainability and onboarding
+    - [ ] Ensure all code is properly typed and formatted
+    - [ ] Review and test final codebase for clarity and maintainability
+
+---
+
+> Follow this checklist to break apart PlaygroundScene.tsx and build a scalable, maintainable playground game architecture.

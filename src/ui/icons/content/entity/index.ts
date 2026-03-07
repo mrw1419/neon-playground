@@ -1,0 +1,9 @@
+export { StarIcon } from "./Star/StarIcon";
+export { SpaceshipIcon } from "./Spaceship/SpaceshipIcon";
+export { NebulaIcon } from "./Nebula/NebulaIcon";
+export { ColinIcon } from "./Colin/ColinIcon";
+export { CometIcon } from "./Comet/CometIcon";
+export { AsteroidIcon } from "./Asteroid/AsteroidIcon";
+export { PlanetIcon } from "./Planet/PlanetIcon";
+export { UFOIcon } from "./UFO/UFOIcon";
+export { SatelliteIcon } from "./Satellite/SatelliteIcon";

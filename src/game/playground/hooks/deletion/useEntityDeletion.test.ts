@@ -1,0 +1,3 @@
+// Test for useEntityDeletion hook
+import { useEntityDeletion } from './useEntityDeletion';
+// ...existing test code...

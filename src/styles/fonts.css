@@ -1,0 +1,41 @@
+/* This file defines the font imports and global font styles for the Neon Playground application. It imports several Google Fonts (Orbitron, Exo 2, Rajdhani, Rubik, Inter) and sets up a font hierarchy where headings and special text use a combination of these fonts with a focus on Rajdhani for body and UI text. The file also applies specific letter-spacing to Rajdhani text globally to enhance readability and maintain a cohesive visual style across the application.
+*/
+/* Google Fonts imports for global use */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Neon Playground font hierarchy */
+/* Headings and special text remain Orbitron-dominant */
+
+
+h1, h2, h3, h4, h5, h6, .headline, .special {
+	font-family: 'Rajdhani', 'Exo 2', 'Rubik', 'Inter', sans-serif;
+	font-weight: 700;
+}
+
+/* Global Orbitron letter spacing */
+body, * {
+	font-variant-ligatures: none;
+}
+
+/* Apply 1px letter-spacing to all Rajdhani text globally */
+[style*="font-family: 'Rajdhani"],
+[style*='font-family: "Rajdhani"'],
+[style*='font-family: Rajdhani'],
+.rajdhani, h1, h2, h3, h4, h5, h6, .headline, .special {
+	letter-spacing: 1px !important;
+}
+
+/* Body and UI text now use Rajdhani instead of Rubik */
+p, .body, .paragraph, .basic, label, input, textarea, button {
+	font-family: 'Rajdhani', 'Inter', 'Exo 2', 'Rubik', 'Orbitron', sans-serif;
+	font-weight: 400;
+	letter-spacing: 0.01em;
+}
+
+/*       <div style={{ position: "absolute", top: 10, right: 10, color: "#0f0", fontFamily: "monospace", fontSize: 12, zIndex: 999 }}>
+        Planets: {planets.length} | Ready ✓ {placementMode && "| Placement Mode"}
+      </div> */
